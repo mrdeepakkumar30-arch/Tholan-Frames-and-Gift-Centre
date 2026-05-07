@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Gallery &amp; Shop · Tholan Frames and Gifts Shop</title>
+    <meta name="description" content="Browse frames, gifts, and wholesale-ready stock — add items to cart, pay via UPI, print bill." />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header no-print">
+      <div class="container nav-wrap" data-nav-root>
+        <div class="brand-stack">
+          <span class="brand">Tholan Frames and Gifts Shop</span>
+          <span class="brand-sub">Catalogue &amp; cart</span>
+        </div>
+        <button class="nav-toggle" type="button" data-nav-toggle aria-controls="PrimaryNav">Menu</button>
+        <nav class="nav-links" id="PrimaryNav" data-nav-links aria-label="Primary navigation">
+          <a href="index.html" data-page>Home</a>
+          <a href="gallery.html" data-page>Gallery &amp; Shop</a>
+          <a href="about.html" data-page>About</a>
+          <a href="contact.html" data-page>Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container section gallery-layout">
+      <div>
+        <div class="panel">
+          <div class="kicker">Interactive catalogue</div>
+          <h1 style="margin-top: 2px;">Frames, gifts &amp; wholesale previews</h1>
+          <p class="muted" style="max-width:74ch;margin-bottom:0;">
+            Filters pull from locally stored catalogue data (<strong>Staff → admin</strong> updates SKUs).
+            Checkout uses a UPI deep link plus QR preview — fulfilment confirmations still flow through WhatsApp.
+          </p>
+        </div>
+
+        <section class="section-tight panel" style="margin-top:16px;padding-top:20px;">
+          <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;">
+            <h2 style="margin:4px 0 0;font-size:1.35rem;">Products</h2>
+            <div style="display:flex;flex-wrap:wrap;gap:10px;">
+              <button type="button" class="btn btn-outline btn-sm no-print" data-action-view-all>
+                View all in modal
+              </button>
+              <a href="contact.html" class="btn btn-ghost btn-sm no-print">Need directions?</a>
+            </div>
+          </div>
+
+          <div class="filters no-print">
+            <button type="button" data-filter="All" class="is-active">All</button>
+            <button type="button" data-filter="Photo Frames">Photo Frames</button>
+            <button type="button" data-filter="Gift Items">Gift Items</button>
+            <button type="button" data-filter="Wholesale Stock">Wholesale Stock</button>
+          </div>
+
+          <div class="products-grid" data-product-grid></div>
+        </section>
+      </div>
+
+      <aside class="cart-panel no-print">
+        <div class="cart-head">
+          <h2 style="margin:0;font-size:1.1rem;">Cart</h2>
+          <span class="badge" data-cart-badge aria-hidden="true"></span>
+        </div>
+        <div class="cart-lines" data-cart-lines></div>
+        <div class="cart-total">
+          <span>Subtotal</span>
+          <strong data-cart-subtotal>₹0.00</strong>
+        </div>
+        <div class="cart-buttons">
+          <button type="button" class="btn btn-primary btn-block" data-pay-now>Pay now (UPI)</button>
+          <button type="button" class="btn btn-outline btn-block" data-whatsapp-order>Send cart on WhatsApp</button>
+          <button type="button" class="btn btn-ghost btn-block" data-print-bill>Print bill</button>
+          <button type="button" class="btn btn-outline btn-block" data-clear-cart>Clear cart</button>
+        </div>
+        <p class="muted small" style="margin-bottom:0;margin-top:10px;line-height:1.45;">
+          Payments are honoured once received in the merchant account. Mention your WhatsApp name in the remarks if the UPI form allows it.
+        </p>
+      </aside>
+    </main>
+
+    <footer class="site-footer no-print">
+      <div class="container footer-links">
+        <a href="index.html">Home</a>
+        <a href="contact.html">Contact</a>
+        <a data-wa>I need guidance</a>
+        <a href="admin.html" class="muted small">Staff</a>
+      </div>
+      <div class="container">
+        <p class="footer-muted">&copy; <span data-year></span> Tholan Frames and Gifts Shop.</p>
+      </div>
+    </footer>
+
+    <div class="overlay" hidden data-modal-all aria-modal="true" role="dialog">
+      <div class="modal">
+        <div class="modal-actions">
+          <h2 style="margin: 0;">Full gallery</h2>
+          <button type="button" class="btn btn-outline btn-sm" data-modal-close>Close</button>
+        </div>
+        <div class="modal-stack">
+          <div class="products-grid" data-modal-grid></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="overlay" hidden data-pay-overlay aria-modal="true" role="dialog">
+      <div class="modal pay-modal">
+        <h2 style="margin-top:0;font-size:1.2rem;">Pay with UPI</h2>
+        <p class="muted" style="margin-top:-4px;">Amount due:</p>
+        <p style="margin: 4px 0 8px;"><strong data-pay-amount>₹0.00</strong></p>
+        <img alt="UPI QR code" loading="lazy" data-qr-img width="220" height="220" />
+        <p class="muted small">Scan with any UPI app linked to merchant VPA in <strong>js/config.js</strong>.</p>
+        <div style="display:grid;gap:10px;margin-top:14px;">
+          <a class="btn btn-primary btn-block" data-upi-link href="#">Open UPI app</a>
+          <button type="button" class="btn btn-outline btn-block" data-close-pay>Close</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="printRoot"></div>
+
+    <script src="js/config.js"></script>
+    <script src="js/catalog.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/checkout.js"></script>
+    <script src="js/receipt.js"></script>
+    <script src="js/contact-bind.js"></script>
+    <script src="js/nav.js"></script>
+    <script src="js/gallery-page.js"></script>
+  </body>
+</html>

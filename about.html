@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About · Tholan Frames and Gifts Shop</title>
+    <meta name="description" content="About Tholan Frames and Gifts Shop — frames, gifts & wholesale in Srivilliputtur." />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap" data-nav-root>
+        <div class="brand-stack">
+          <span class="brand">Tholan Frames and Gifts Shop</span>
+          <span class="brand-sub">Frames · Gifts · Wholesale</span>
+        </div>
+        <button class="nav-toggle" type="button" data-nav-toggle aria-controls="PrimaryNav">Menu</button>
+        <nav class="nav-links" id="PrimaryNav" data-nav-links aria-label="Primary navigation">
+          <a href="index.html" data-page>Home</a>
+          <a href="gallery.html" data-page>Gallery &amp; Shop</a>
+          <a href="about.html" data-page>About</a>
+          <a href="contact.html" data-page>Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container section">
+      <div class="panel">
+        <div class="kicker">Trusted locally</div>
+        <h1>Crafted presentation. Thoughtful gifting.</h1>
+        <p class="muted" style="max-width:70ch">
+          Tholan Frames and Gifts Shop is rooted in artisan-friendly frames, memorable gift accents, and
+          dependable wholesale pacing for boutiques and resellers. We combine traditional stone-forward
+          craft cues with crisp modern merchandising — so shoppers see quality at first glance.
+        </p>
+
+        <h2 class="mt-sm">Experience</h2>
+        <p class="muted" style="max-width:70ch">
+          With over <strong class="muted" style="color:var(--ink)"><span id="yearsExpInline"></span> years</strong> of
+          customer-forward retail instincts, our team counsels sizing, gifting themes, and margin-friendly picks for
+          business accounts.
+        </p>
+
+        <h2 class="mt-sm">Services</h2>
+        <ul class="ul-check">
+          <li>Retail-ready photo frames curated for devotional, portrait, &amp; gifting moments.</li>
+          <li>Unique gift artefacts &amp; decor-friendly SKUs rotated seasonally.</li>
+          <li>Wholesale stock pointers — tell us quantities via WhatsApp backed by catalogue exports.</li>
+        </ul>
+
+        <div class="hero-actions mt-sm">
+          <a class="btn btn-primary" href="gallery.html">Explore catalogue</a>
+          <a class="btn btn-outline" data-wa>Discuss needs on WhatsApp</a>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-links">
+          <a href="gallery.html">Shop</a>
+          <a data-wa>WhatsApp</a>
+          <a href="contact.html">Visit / Map</a>
+          <a href="admin.html" class="muted small">Staff</a>
+        </div>
+        <p class="footer-muted">&copy; <span data-year></span> Tholan Frames and Gifts Shop.</p>
+      </div>
+    </footer>
+
+    <script src="js/config.js"></script>
+    <script src="js/contact-bind.js"></script>
+    <script src="js/nav.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        var el = document.getElementById('yearsExpInline');
+        if (el) el.textContent = SHOP_CONFIG.yearsExperience || '';
+      });
+    </script>
+  </body>
+</html>
